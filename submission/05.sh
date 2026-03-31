@@ -6,5 +6,5 @@ transaction="01000000000101c8b0928edebbec5e698d5f86d0474595d9f6a5b2e4e3772cd9d10
 
 txid=$(bitcoin-cli -regtest decoderawtransaction "$transaction" | jq -r '.txid')
 
-PSBT_1=$(bitcoin-cli -regtest -rpcwallet=builderswallet -named walletcreatefundedpsbt inputs='[{"txid":"'"$txid"'","vout":0},{"txid":"'"$txid"'","vout":1}]' outputs='{"2MvLcssW49n9atmksjwg2ZCMsEMsoj3pzUP":0.20000000}' locktime=0 options='{"includeWatching":true}' bip32derivs=true | jq -r '.psbt')
+PSBT_1=$(bitcoin-cli -regtest -rpcwallet=builderswallet -named walletcreatefundedpsbt   inputs='[{"txid":"'"$txid"'","vout":0},{"txid":"'"$txid"'","vout":1}]' outputs='{"2MvLcssW49n9atmksjwg2ZCMsEMsoj3pzUP":0.20000000}' locktime=0 options='{"includeWatching":true}'   bip32derivs=true | jq -r '.psbt')
 echo "$PSBT_1"
