@@ -6,5 +6,5 @@ pkey3="03ce11c7b563c3d7fae916351f234eac5089ad2e42fa9e29a94ee944e00c880c66"
 
 pkeys="["$pkey1","$pkey2","$pkey3"]"
 
-P2SH_ADDRESS=$(bitcoin-cli -regtest -named createmultisig nrequired=1 keys="$pkeys" address_type=legacy | jq -r '.address')
+P2SH_ADDRESS=$(bitcoin-cli -regtest -named createmultisig nrequired=2 keys="$pkeys" address_type=legacy | jq -r '.address')
 echo "$P2SH_ADDRESS"
