@@ -11,4 +11,4 @@ utxo_vout_2=$(bitcoin-cli -regtest decoderawtransaction "$transaction" | jq -r '
 
 rawtxhex=$(bitcoin-cli -regtest createpsbt inputs='[{"txid":"'"$utxo_txid"'","vout":'"$utxo_vout_1"'},{"txid":"'"$utxo_txid"'","vout":'"$utxo_vout_2"'"}]' outputs='{"'"$address"'":0.20000000}')
 
-echo $psbt
+echo $rawtxhex
