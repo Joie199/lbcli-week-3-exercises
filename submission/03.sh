@@ -10,4 +10,5 @@ pubkey4=$(echo "$decoded" | jq -r '.vin[3].txinwitness[1]')
 pubkeys="[\"$pubkey1\",\"$pubkey2\",\"$pubkey3\",\"$pubkey4\"]"
 
 bitcoin-cli -named -regtest createmultisig nrequired=1 keys="$pubkeys"
+
 #bitcoin-cli -named -regtest createmultisig nrequired=1 keys='''["'$pubkey1'","'$pubkey2'","'$pubkey3'","'$pubkey4'"]'''
