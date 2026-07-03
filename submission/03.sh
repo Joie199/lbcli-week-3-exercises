@@ -7,6 +7,5 @@ pubkey4=$(bitcoin-cli -regtest decoderawtransaction "$transaction" | jq -r '.vin
 
 #pubkeys="[\"$pubkey1\",\"$pubkey2\",\"$pubkey3\",\"$pubkey4\"]"
 
-multisig=$(bitcoin-cli -named -regtest createmultisig nrequired=1 keys='''["'$pubkey1'","'$pubkey2'","'$pubkey3'","'$pubkey4'"]''')
+bitcoin-cli -named -regtest createmultisig nrequired=1 keys='''["'$pubkey1'","'$pubkey2'","'$pubkey3'","'$pubkey4'"]'''
 
-echo $multisig
