@@ -14,6 +14,6 @@ psbt=$(bitcoin-cli -regtest createpsbt "[{\"txid\":\"$txid\",\"vout\":$vout0},{\
 
 updated=$(bitcoin-cli -regtest utxoupdatepsbt "$psbt")
 
-signed=$(bitcoin-cli -regtest walletprocesspsbt "$updated")
+signed=$(bitcoin-cli -regtest walletprocesspsbt "$updated" | jq -r '.psbt')
 
 echo "$signed"
