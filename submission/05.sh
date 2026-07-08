@@ -16,4 +16,4 @@ updated=$(bitcoin-cli -regtest utxoupdatepsbt "$psbt")
 
 signed=$(bitcoin-cli -regtest walletprocesspsbt "$updated" | jq -r '.psbt')
 
-echo "$signed"
+echo "$signed"    
